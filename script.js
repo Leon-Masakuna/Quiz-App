@@ -35,7 +35,7 @@ const btnHome = document.querySelector("#home-page");
 let timer = document.querySelector("#time-counter");
 
 let max; //max points max
-let successScore = 0; //good answer réussite
+let successScore = 00; //good answer réussite
 let id = 0;
 
 //objects array
@@ -266,7 +266,7 @@ let allQuestions = [{
     },
 ];
 
-//Select labels for questions interface
+//Select labels for question interface
 let label1 = document.getElementById("label_1");
 let label2 = document.getElementById("label_2");
 let label3 = document.getElementById("label_3");
@@ -282,7 +282,6 @@ function questionnaire(id) {
     label2.textContent = allQuestions[id].responses[1];
     label3.textContent = allQuestions[id].responses[2];
     label4.textContent = allQuestions[id].responses[3];
-    // allQuestions[id] = allQuestions.sort(() => Math.random() - 0.5);
 }
 
 //function to reinitialize radios
@@ -310,7 +309,7 @@ for (let i = 0; i < 4; i++) {
     });
 }
 
-//function to get the value of the checked input and verify if it is equal to good answer, and if it already exists in answersArray when it's clicked twice or more...
+//function to get the value of the checked input and verify if it is equal to good answer ...
 function checkedRadio(response) {
     if (answersArray.find((newValue) => newValue.id === id)) {
         answersArray = answersArray.map((newValue) =>
@@ -327,6 +326,7 @@ function checkedRadio(response) {
             good: response.trim() === allQuestions[id].goodAnswer.trim(),
         });
     }
+    console.log(answersArray);
     console.log(
         "score = ",
         answersArray.filter((newValue) => newValue.good).length
@@ -383,7 +383,11 @@ function showResult() {
 
     getName.textContent = nom.value;
     getEmail.textContent = email.value;
-    lastResult.textContent = successScore + "/" + max;
+    if (successScore < 10) {
+        lastResult.textContent = "0" + successScore + "/" + max;
+    } else {
+        lastResult.textContent = successScore + "/" + max;
+    }
     if (successScore > 7) {
         resultSymbol.classList.add(
             "fa-regular",
@@ -396,6 +400,7 @@ function showResult() {
             "fa-circle-xmark",
             "failure-color"
         );
+        lastResult.style.color = "red";
     }
 }
 
