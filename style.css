@@ -550,7 +550,7 @@ input[type="radio"]:checked:before {
     label#label {
         display: block;
         text-align: left;
-        margin-left: 40px;
+        margin-left: 33px;
         font-family: "Inter";
         font-size: 14px;
         padding-bottom: 10px;
@@ -565,7 +565,7 @@ input[type="radio"]:checked:before {
     div.error-message1,
     div.error-message2 {
         font-size: 8.5px;
-        margin-left: 41px;
+        margin-left: 33px;
     }
     input.error {
         border: 1px solid red;
@@ -596,7 +596,7 @@ input[type="radio"]:checked:before {
     }
     div.answers {
         height: 30px;
-        width: 300px;
+        width: 284.5px;
         border: 1px #dddddd solid;
         margin-left: 26px;
         margin-bottom: 30px;
