@@ -583,7 +583,7 @@ input[type="radio"]:checked:before {
     input.input {
         height: 25px;
         width: 270px;
-        border: 1px solid black;
+        border: 1px solid #dddddd;
         font-family: "Inter";
         font-size: 13px;
     }
