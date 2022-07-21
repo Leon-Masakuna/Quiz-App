@@ -58,7 +58,7 @@ function validate(event) {
     //check form inputs values
     if (
         nom.value == "" ||
-        nom.value.length < 3 ||
+        nom.value.length < 2 ||
         email.value == "" ||
         email.value == -1
     ) {
@@ -68,7 +68,7 @@ function validate(event) {
         } else if (nom.value.length < 3) {
             nom.classList.add("error");
             firstErrorMsg.textContent =
-                "Saisissez un nom ayant plus de deux caractères";
+                "Saisissez un nom ayant au-moins deux caractères";
             firstErrorMsg.style.display = "block";
         } else {
             firstErrorMsg.textContent = "";
@@ -326,11 +326,11 @@ function checkedRadio(response) {
             good: response.trim() === allQuestions[id].goodAnswer.trim(),
         });
     }
-    console.log(answersArray);
-    console.log(
-        "score = ",
-        answersArray.filter((newValue) => newValue.good).length
-    );
+    // console.log(answersArray);
+    // console.log(
+    // "score = ",
+    // answersArray.filter((newValue) => newValue.good).length
+    // );
     successScore = answersArray.filter((newValue) => newValue.good).length;
 }
 
@@ -400,7 +400,7 @@ function showResult() {
             "fa-circle-xmark",
             "failure-color"
         );
-        lastResult.style.color = "red";
+        // lastResult.style.color = "red";
     }
 }
 
