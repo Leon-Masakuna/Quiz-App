@@ -92,6 +92,10 @@ function validate(event) {
         secondForm.style.display = "block";
         progressBar();
         questionnaire(id);
+        localStorage.setItem("name", nom.value);
+        localStorage.setItem("email", email.value);
+        firstForm.style.display = "none";
+        form.reset();
     } else {
         email.classList.add("error");
         secondErrorMsg.textContent = "Votre adresse email n'est pas valide";
@@ -343,9 +347,7 @@ function progressBar() {
     let counter = 60;
 
     function manageCounter() {
-        counter--;
-
-        if (counter == -1) {
+        if (counter == 0) {
             clearInterval(move);
             btnNext.disabled = true;
             if (id < 14) {
@@ -371,6 +373,7 @@ function progressBar() {
             timer.textContent = counter;
             innerBar.style.width = counter * 1.6667 + "%";
         }
+        counter--;
     }
     move = setInterval(manageCounter, 1000);
 }
@@ -381,8 +384,8 @@ function showResult() {
     secondForm.style.display = "none";
     thirdForm.style.display = "block";
 
-    getName.textContent = nom.value;
-    getEmail.textContent = email.value;
+    getName.textContent = localStorage.getItem("name");
+    getEmail.textContent = localStorage.getItem("email");
     if (successScore < 10) {
         lastResult.textContent = "0" + successScore + "/" + max;
     } else {
@@ -442,5 +445,7 @@ btnHome.addEventListener("click", () => {
     firstForm.style.display = "block";
     secondForm.style.display = "none";
     thirdForm.style.display = "none";
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
     document.location.reload();
 });
