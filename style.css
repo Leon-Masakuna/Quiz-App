@@ -99,14 +99,14 @@ label#label {
 }
 
 input.input {
-    height: 35px;
-    width: 390px;
+    height: 45px;
+    width: 374px;
     border: 1px solid #dddddd;
     font-family: "Inter";
     font-size: 16px;
     color: #555555;
     background: #ffffff;
-    border: 1px solid #dddddd;
+    padding-left: 20px;
 }
 
 div.error-message1,
@@ -128,6 +128,8 @@ button#submit-button {
     font-family: "Inter";
     font-size: 18px;
     color: #ffffff;
+    margin-top: 5px;
+    box-shadow: 0px 3px 5px rgb(164, 185, 192);
 }
 
 button#submit-button:hover {
@@ -143,12 +145,12 @@ div.quiz-part div.progress-bar {
 
 div.progress-bar .second-count {
     float: right;
-    margin-right: 41px;
+    margin-right: 36px;
     color: #555555;
 }
 
 div.progress-bar .number-question {
-    margin-left: 15px;
+    margin-left: 11px;
     color: #555555;
 }
 
@@ -164,8 +166,8 @@ div.progress-bar div.progressbar-counter div.innerbar {
 
 div.progress-bar div.progressbar-counter {
     height: 10px;
-    width: 87.7%;
-    margin-left: 16px;
+    width: 89.4%;
+    margin-left: 11px;
     background: #dddddd;
     border-radius: 10px;
     margin-top: 15px;
@@ -174,6 +176,7 @@ div.progress-bar div.progressbar-counter {
 div.answers {
     display: flex;
     flex-direction: row;
+    padding-left: 10px;
 }
 
 div.answers input {
@@ -219,7 +222,7 @@ div.page-content div.disappear {
 div.answers {
     height: 30px;
     width: 395px;
-    margin-left: 42px;
+    margin-left: 36px;
     margin-bottom: 30px;
     font-family: "Inter";
     font-size: 14px;
@@ -253,6 +256,7 @@ div.answers label {
     padding-top: 7px;
     font-family: "Inter";
     color: #555555;
+    padding-left: 11px;
 }
 
 div.answers label {
@@ -276,16 +280,18 @@ div.buttons {
 div.buttons #quitButton,
 div.buttons #nextButton {
     height: 40px;
-    width: 150px;
-    margin: 15px 10px;
+    width: 186.5px;
+    margin: 15px 15px;
     color: #ffffff;
     border: none;
     font-family: "Inter";
     font-size: 16px;
+    box-shadow: 0px 3px 5px rgb(164, 185, 192);
 }
 
 div.buttons #quitButton {
     background: #ec880c;
+    margin-left: -34px;
 }
 
 div.buttons .nextButtonHover:hover {
@@ -342,6 +348,7 @@ div#home-button button#home-page {
     font-weight: 500;
     font-size: 16px;
     margin-top: 40px;
+    box-shadow: 0px 3px 5px rgb(164, 185, 192);
 }
 
 button#home-page:hover {
@@ -367,7 +374,6 @@ input[type="radio"]:before {
     margin-top: 5px;
     margin-left: -1px;
     border-radius: 50%;
-    border: 1px solid #dddddd;
 }
 
 input[type="radio"]:checked:before {
@@ -472,7 +478,6 @@ input[type="radio"]:checked:before {
         background: #028a3d;
         border: none;
         color: #ffffff;
-        border: none;
         font-family: "Inter";
         font-size: 15px;
         margin-top: 30px;
@@ -587,8 +592,8 @@ input[type="radio"]:checked:before {
         padding-bottom: 10px;
     }
     input.input {
-        height: 25px;
-        width: 270px;
+        height: 32px;
+        width: 252px;
         border: 1px solid #dddddd;
         font-family: "Inter";
         font-size: 13px;
@@ -628,7 +633,7 @@ input[type="radio"]:checked:before {
     }
     div.answers {
         height: 30px;
-        width: 284.5px;
+        width: 277px;
         border: 1px #dddddd solid;
         margin-left: 26px;
         margin-bottom: 30px;
