@@ -54,6 +54,7 @@ function validate(event) {
     const checkMail = /^([\.\_a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]){2,8}$/;
     const checkMail2 =
         /^([\.\_a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]){2,3}\.[a-zA-Z]{1,3}$/;
+    const checkMail3 = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
     //check form inputs values
     if (
@@ -87,7 +88,11 @@ function validate(event) {
             secondErrorMsg.textContent = "";
             secondErrorMsg.style.display = "block";
         }
-    } else if (checkMail.test(email.value) || checkMail2.test(email.value)) {
+    } else if (
+        checkMail.test(email.value) ||
+        checkMail2.test(email.value) ||
+        checkMail3.test(email.value)
+    ) {
         firstForm.classList.add("disappear");
         secondForm.style.display = "block";
         progressBar();
