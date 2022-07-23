@@ -54,7 +54,7 @@ function validate(event) {
     const checkMail = /^([\.\_a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]){2,8}$/;
     const checkMail2 =
         /^([\.\_a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]){2,3}\.[a-zA-Z]{1,3}$/;
-    const checkMail3 = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const checkMail3 = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
 
     //check form inputs values
     if (
@@ -66,7 +66,7 @@ function validate(event) {
         if (nom.value == "") {
             nom.classList.add("error");
             firstErrorMsg.style.display = "block";
-        } else if (nom.value.length < 3) {
+        } else if (nom.value.length < 2) {
             nom.classList.add("error");
             firstErrorMsg.textContent =
                 "Saisissez un nom ayant au-moins deux caractères";
@@ -122,7 +122,7 @@ let allQuestions = [{
             "eventListener",
             "executeEvent",
             "addEventListener",
-            "function(){}",
+            "function() Listener{}",
         ],
     },
     {
