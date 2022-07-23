@@ -3,7 +3,8 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to right, #21e8c0, #42f5f2);
+    background: linear-gradient( 90deg, #85f6b8 0%, rgba(142, 217, 235, 0.85) 99.84%);
+    background-blend-mode: darken;
 }
 
 @keyframes disparition {
@@ -124,7 +125,7 @@ div.error-message2 {
 }
 
 button#submit-button {
-    height: 40px;
+    height: 50px;
     width: 200px;
     /* margin-top: 20px;s */
     background: #028a3d;
@@ -132,7 +133,7 @@ button#submit-button {
     font-family: "Inter";
     font-size: 18px;
     color: #ffffff;
-    margin-top: 5px;
+    margin-top: 2px;
     box-shadow: 0px 3px 5px rgb(164, 185, 192);
 }
 
@@ -182,7 +183,7 @@ div.progress-bar div.progressbar-counter {
 div.answers {
     display: flex;
     flex-direction: row;
-    padding-left: 10px;
+    padding-left: 6px;
 }
 
 div.answers input {
@@ -227,7 +228,7 @@ div.page-content div.disappear {
 
 div.answers {
     height: 30px;
-    width: 395px;
+    width: 399.6px;
     margin-left: 36px;
     margin-bottom: 30px;
     font-family: "Inter";
@@ -258,11 +259,11 @@ input[type="button"]:enabled {
 
 div.answers label {
     margin-top: 0;
-    width: 375px;
+    width: 100%;
     padding-top: 7px;
     font-family: "Inter";
     color: #555555;
-    padding-left: 11px;
+    padding-left: 5px;
 }
 
 div.answers label {
@@ -347,15 +348,15 @@ div#home-button {
 }
 
 div#home-button button#home-page {
-    height: 40px;
-    width: 180px;
+    height: 59px;
+    width: 216px;
     background: #0880d6;
     color: #ffffff;
     border: none;
     font-family: "Inter";
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 20px;
     margin-top: 40px;
     box-shadow: 0px 3px 5px rgb(164, 185, 192);
 }
@@ -642,7 +643,7 @@ input[type="radio"]:checked:before {
     }
     div.answers {
         height: 30px;
-        width: 277px;
+        width: 280px;
         border: 1px #dddddd solid;
         margin-left: 26px;
         margin-bottom: 30px;
@@ -692,6 +693,19 @@ input[type="radio"]:checked:before {
         margin-top: 2px;
         margin-left: -2px;
         border-radius: 50%;
+    }
+    #name-result {
+        font-size: 20px;
+        font-family: "Inter";
+        text-align: center;
+        padding-top: 80px;
+        padding-bottom: 35px;
+    }
+    #email-result {
+        font-size: 16px;
+        font-family: "Inter";
+        text-align: center;
+        padding-bottom: 35px;
     }
 }
 
