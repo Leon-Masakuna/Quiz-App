@@ -31,20 +31,12 @@ div.validation-part {
     margin: auto;
 }
 
-div.validation-part {
-    display: block;
-}
-
 div.quiz-part {
     background: #ffffff;
     width: 480px;
     height: 580px;
     margin: auto;
-}
-
-div.quiz-part {
     display: none;
-    /*     margin-top: 20px; */
 }
 
 div.result-part {
@@ -53,11 +45,6 @@ div.result-part {
     height: 580px;
     display: none;
     margin: auto;
-}
-
-div.result-part {
-    /*     margin-top: 20px; */
-    display: none;
 }
 
 div.validation-part div.name-part,
@@ -206,12 +193,6 @@ div.answers input#third-radio:hover,
 div.answers input#fourth-radio:hover {
     cursor: pointer;
 }
-
-
-/* div.answers span {
-    font-size: 16px;
-    font-family: 'Inter';
-} */
 
 input.error {
     background: #ffffff;
