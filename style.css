@@ -214,6 +214,7 @@ div.answers {
     font-size: 14px;
     background: #ffffff;
     border: 1px solid #dddddd;
+    font-weight: 400;
 }
 
 div.valid {
