@@ -16,8 +16,8 @@ body {
 
 .page-content {
     animation: disparition 3s;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 div.validation-part {
