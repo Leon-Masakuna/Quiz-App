@@ -302,7 +302,7 @@ function radioReinitialization() {
 }
 
 //browse differents answers
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < radios.length; i++) {
     radios[i].addEventListener("change", () => {
         btnNext.disabled = false;
         const response = radios[i].parentElement.querySelector("label").textContent;
