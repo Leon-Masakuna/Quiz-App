@@ -38,7 +38,7 @@ const btnHome = document.querySelector("#home-page");
 let timer = document.querySelector("#time-counter");
 
 let max; //max points max
-let successScore = 00; //good answer réussite
+let successScore = 0; //good answer réussite
 let id = 0;
 
 //objects array
