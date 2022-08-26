@@ -176,10 +176,10 @@ function checkedRadio(response) {
         });
     }
     /* console.log(answersArray);
-      console.log(
-      "score = ",
-      answersArray.filter((newValue) => newValue.good).length
-      ); */
+          console.log(
+          "score = ",
+          answersArray.filter((newValue) => newValue.good).length
+          ); */
     successScore = answersArray.filter((newValue) => newValue.good).length;
 }
 
