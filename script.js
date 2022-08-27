@@ -175,12 +175,12 @@ function checkedRadio(response) {
             good: response.trim() === allQuestions[id].goodAnswer.trim(),
         });
     }
-    /* console.log(answersArray);
-          console.log(
-          "score = ",
-          answersArray.filter((newValue) => newValue.good).length
-          ); */
     successScore = answersArray.filter((newValue) => newValue.good).length;
+    /* console.log(answersArray); */
+    console.log(
+        "score = ",
+        answersArray.filter((newValue) => newValue.good).length
+    );
 }
 
 //Progress bar
@@ -248,7 +248,6 @@ function showResult() {
             "fa-circle-xmark",
             "failure-color"
         );
-        // lastResult.style.color = "red";
     }
 }
 
