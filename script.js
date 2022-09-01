@@ -49,70 +49,70 @@ goButton.addEventListener("click", validate);
 
 //create validate function called in goButton callback
 function validate(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    // let checkMail = email.value.indexOf("@gmail.com");
-    // let checkName = nom.value;
+  // let checkMail = email.value.indexOf("@gmail.com");
+  // let checkName = nom.value;
 
-    const checkMail = /^([\.\_a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]){2,8}$/;
-    const checkMail2 =
-        /^([\.\_a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]){2,3}\.[a-zA-Z]{1,3}$/;
-    const checkMail3 = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
+  const checkMail = /^([\.\_a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]){2,8}$/;
+  const checkMail2 =
+    /^([\.\_a-zA-Z0-9]+)@([a-zA-Z]+)\.([a-zA-Z]){2,3}\.[a-zA-Z]{1,3}$/;
+  const checkMail3 = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
 
-    //check form inputs values
-    if (
-        nom.value == "" ||
-        nom.value.length < 2 ||
-        email.value == "" ||
-        email.value == -1
-    ) {
-        if (nom.value == "") {
-            nom.classList.add("error");
-            firstErrorMsg.style.display = "block";
-        } else if (nom.value.length < 2) {
-            nom.classList.add("error");
-            firstErrorMsg.textContent =
-                "Saisissez un nom ayant au-moins deux caractères";
-            firstErrorMsg.style.display = "block";
-        } else {
-            firstErrorMsg.textContent = "";
-            firstErrorMsg.style.display = "block";
-            nom.classList.remove("error");
-        }
-        if (email.value == "") {
-            email.classList.add("error");
-            secondErrorMsg.style.display = "block";
-        } else if (email.value == -1) {
-            email.classList.add("error");
-            secondErrorMsg.textContent = "Votre adresse email n'est pas valide";
-            secondErrorMsg.style.display = "block";
-        } else {
-            email.classList.remove("error");
-            secondErrorMsg.textContent = "";
-            secondErrorMsg.style.display = "block";
-        }
-    } else if (
-        checkMail.test(email.value) ||
-        checkMail2.test(email.value) ||
-        checkMail3.test(email.value)
-    ) {
-        firstForm.classList.add("disappear");
-        secondForm.style.display = "block";
-        progressBar();
-        questionnaire(id);
-        localStorage.setItem("name", nom.value);
-        localStorage.setItem("email", email.value);
-        firstForm.style.display = "none";
-        form.reset();
+  //check form inputs values
+  if (
+    nom.value == "" ||
+    nom.value.length < 2 ||
+    email.value == "" ||
+    email.value == -1
+  ) {
+    if (nom.value == "") {
+      nom.classList.add("error");
+      firstErrorMsg.style.display = "block";
+    } else if (nom.value.length < 2) {
+      nom.classList.add("error");
+      firstErrorMsg.textContent =
+        "Saisissez un nom ayant au-moins deux caractères";
+      firstErrorMsg.style.display = "block";
     } else {
-        email.classList.add("error");
-        secondErrorMsg.textContent = "Votre adresse email n'est pas valide";
-        secondErrorMsg.style.display = "block";
-
-        firstErrorMsg.textContent = "";
-        firstErrorMsg.style.display = "block";
-        nom.classList.remove("error");
+      firstErrorMsg.textContent = "";
+      firstErrorMsg.style.display = "block";
+      nom.classList.remove("error");
     }
+    if (email.value == "") {
+      email.classList.add("error");
+      secondErrorMsg.style.display = "block";
+    } else if (email.value == -1) {
+      email.classList.add("error");
+      secondErrorMsg.textContent = "Votre adresse email n'est pas valide";
+      secondErrorMsg.style.display = "block";
+    } else {
+      email.classList.remove("error");
+      secondErrorMsg.textContent = "";
+      secondErrorMsg.style.display = "block";
+    }
+  } else if (
+    checkMail.test(email.value) ||
+    checkMail2.test(email.value) ||
+    checkMail3.test(email.value)
+  ) {
+    firstForm.classList.add("disappear");
+    secondForm.style.display = "block";
+    progressBar();
+    questionnaire(id);
+    localStorage.setItem("name", nom.value);
+    localStorage.setItem("email", email.value);
+    firstForm.style.display = "none";
+    form.reset();
+  } else {
+    email.classList.add("error");
+    secondErrorMsg.textContent = "Votre adresse email n'est pas valide";
+    secondErrorMsg.style.display = "block";
+
+    firstErrorMsg.textContent = "";
+    firstErrorMsg.style.display = "block";
+    nom.classList.remove("error");
+  }
 }
 
 //Select labels for question interface
@@ -125,171 +125,171 @@ let num_qst = document.getElementById("num-qst");
 
 //put texts in them
 function questionnaire(id) {
-    getQuestion.textContent = allQuestions[id].question;
-    num_qst.textContent = allQuestions[id].questionNumber;
-    label1.textContent = allQuestions[id].responses[0];
-    label2.textContent = allQuestions[id].responses[1];
-    label3.textContent = allQuestions[id].responses[2];
-    label4.textContent = allQuestions[id].responses[3];
+  getQuestion.textContent = allQuestions[id].question;
+  num_qst.textContent = allQuestions[id].questionNumber;
+  label1.textContent = allQuestions[id].responses[0];
+  label2.textContent = allQuestions[id].responses[1];
+  label3.textContent = allQuestions[id].responses[2];
+  label4.textContent = allQuestions[id].responses[3];
 }
 
 //function to reinitialize radios
 function radioReinitialization() {
-    radios[0].checked = false;
-    radios[1].checked = false;
-    radios[2].checked = false;
-    radios[3].checked = false;
+  radios[0].checked = false;
+  radios[1].checked = false;
+  radios[2].checked = false;
+  radios[3].checked = false;
 }
 
 //browse differents answers
 for (let i = 0; i < radios.length; i++) {
-    radios[i].addEventListener("change", () => {
-        btnNext.disabled = false;
-        const response = radios[i].parentElement.querySelector("label").textContent;
+  radios[i].addEventListener("change", () => {
+    btnNext.disabled = false;
+    const response = radios[i].parentElement.querySelector("label").textContent;
 
-        if (document.querySelector(".answers.valid")) {
-            document.querySelector(".answers.valid").classList.remove("valid");
-        }
-        if (radios[i].checked == true) {
-            choiceBack[i].classList.add("valid");
-            btnNext.classList.add("nextButtonHover");
-        }
-        checkedRadio(response);
-    });
+    if (document.querySelector(".answers.valid")) {
+      document.querySelector(".answers.valid").classList.remove("valid");
+    }
+    if (radios[i].checked == true) {
+      choiceBack[i].classList.add("valid");
+      btnNext.classList.add("nextButtonHover");
+    }
+    checkedRadio(response);
+  });
 }
 
 //function to get the value of the checked input and verify if it is equal to good answer ...
 function checkedRadio(response) {
-    if (answersArray.find((newValue) => newValue.id === id)) {
-        answersArray = answersArray.map((newValue) =>
-            newValue.id === id ?
-            {
-                ...newValue,
-                good: response.trim() === allQuestions[id].goodAnswer.trim(),
-            } :
-            newValue
-        );
-    } else {
-        answersArray.push({
-            id,
+  if (answersArray.find((newValue) => newValue.id === id)) {
+    answersArray = answersArray.map((newValue) =>
+      newValue.id === id
+        ? {
+            ...newValue,
             good: response.trim() === allQuestions[id].goodAnswer.trim(),
-        });
-    }
-    successScore = answersArray.filter((newValue) => newValue.good).length;
-    /* console.log(answersArray); */
-    console.log(
-        "score = ",
-        answersArray.filter((newValue) => newValue.good).length
+          }
+        : newValue
     );
+  } else {
+    answersArray.push({
+      id,
+      good: response.trim() === allQuestions[id].goodAnswer.trim(),
+    });
+  }
+  successScore = answersArray.filter((newValue) => newValue.good).length;
+  /* console.log(answersArray); */
+  console.log(
+    "score = ",
+    answersArray.filter((newValue) => newValue.good).length
+  );
 }
 
 //Progress bar
 function progressBar() {
-    if (move) {
-        clearInterval(move);
-    }
-    let innerBar = document.querySelector(".innerbar");
-    let counter = 60;
+  if (move) {
+    clearInterval(move);
+  }
+  let innerBar = document.querySelector(".innerbar");
+  let counter = 60;
 
-    function manageCounter() {
-        if (counter == 0) {
-            clearInterval(move);
-            btnNext.disabled = true;
-            if (id < 14) {
-                id += 1;
-                questionnaire(id);
-                if (document.querySelector(".next-button.nextButtonHover")) {
-                    document
-                        .querySelector(".next-button.nextButtonHover")
-                        .classList.remove("nextButtonHover");
-                }
-                if (document.querySelector(".answers.valid")) {
-                    document.querySelector(".answers.valid").classList.remove("valid");
-                }
-                if (id == 14) {
-                    btnNext.value = "Terminer";
-                }
-                radioReinitialization();
-                progressBar();
-            } else {
-                showResult();
-            }
-        } else {
-            timer.textContent = counter;
-            innerBar.style.width = counter * 1.6667 + "%";
+  function manageCounter() {
+    if (counter == 0) {
+      clearInterval(move);
+      btnNext.disabled = true;
+      if (id < 14) {
+        id += 1;
+        questionnaire(id);
+        if (document.querySelector(".next-button.nextButtonHover")) {
+          document
+            .querySelector(".next-button.nextButtonHover")
+            .classList.remove("nextButtonHover");
         }
-        counter--;
+        if (document.querySelector(".answers.valid")) {
+          document.querySelector(".answers.valid").classList.remove("valid");
+        }
+        if (id == 14) {
+          btnNext.value = "Terminer";
+        }
+        radioReinitialization();
+        progressBar();
+      } else {
+        showResult();
+      }
+    } else {
+      timer.textContent = counter;
+      innerBar.style.width = counter * 1.6667 + "%";
     }
-    move = setInterval(manageCounter, 1000);
+    counter--;
+  }
+  move = setInterval(manageCounter, 1000);
 }
 
 max = allQuestions.length;
 //display result
 function showResult() {
-    secondForm.style.display = "none";
-    thirdForm.style.display = "block";
+  secondForm.style.display = "none";
+  thirdForm.style.display = "block";
 
-    getName.textContent = localStorage.getItem("name");
-    getEmail.textContent = localStorage.getItem("email");
-    if (successScore < 10) {
-        lastResult.textContent = "0" + successScore + "/" + max;
-    } else {
-        lastResult.textContent = successScore + "/" + max;
-    }
-    if (successScore > 7) {
-        resultSymbol.classList.add(
-            "fa-regular",
-            "fa-circle-check",
-            "success-color"
-        );
-    } else {
-        resultSymbol.classList.add(
-            "fa-regular",
-            "fa-circle-xmark",
-            "failure-color"
-        );
-    }
+  getName.textContent = localStorage.getItem("name");
+  getEmail.textContent = localStorage.getItem("email");
+  if (successScore < 10) {
+    lastResult.textContent = "0" + successScore + "/" + max;
+  } else {
+    lastResult.textContent = successScore + "/" + max;
+  }
+  if (successScore > 7) {
+    resultSymbol.classList.add(
+      "fa-regular",
+      "fa-circle-check",
+      "success-color"
+    );
+  } else {
+    resultSymbol.classList.add(
+      "fa-regular",
+      "fa-circle-xmark",
+      "failure-color"
+    );
+  }
 }
 
 //go to the next question
 btnNext.addEventListener("click", btnSuivant);
 //function for next button
 function btnSuivant() {
-    if (document.querySelector(".next-button.nextButtonHover")) {
-        document
-            .querySelector(".next-button.nextButtonHover")
-            .classList.remove("nextButtonHover");
-    }
-    if (document.querySelector(".answers.valid")) {
-        document.querySelector(".answers.valid").classList.remove("valid");
-    }
-    progressBar();
+  if (document.querySelector(".next-button.nextButtonHover")) {
+    document
+      .querySelector(".next-button.nextButtonHover")
+      .classList.remove("nextButtonHover");
+  }
+  if (document.querySelector(".answers.valid")) {
+    document.querySelector(".answers.valid").classList.remove("valid");
+  }
+  progressBar();
 
-    btnNext.disabled = true;
+  btnNext.disabled = true;
 
-    if (id < 14) {
-        radioReinitialization();
-        if (id == 13) {
-            btnNext.value = "Terminer";
-        }
-        id += 1;
-        questionnaire(id);
-    } else {
-        showResult();
+  if (id < 14) {
+    radioReinitialization();
+    if (id == 13) {
+      btnNext.value = "Terminer";
     }
+    id += 1;
+    questionnaire(id);
+  } else {
+    showResult();
+  }
 }
 
 //exit button
 btnQuit.addEventListener("click", () => {
-    showResult();
+  showResult();
 });
 
 //back home button
 btnHome.addEventListener("click", () => {
-    firstForm.style.display = "block";
-    secondForm.style.display = "none";
-    thirdForm.style.display = "none";
-    localStorage.removeItem("name");
-    localStorage.removeItem("email");
-    document.location.reload();
+  firstForm.style.display = "block";
+  secondForm.style.display = "none";
+  thirdForm.style.display = "none";
+  localStorage.removeItem("name");
+  localStorage.removeItem("email");
+  document.location.reload();
 });

@@ -1,99 +1,149 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>replit</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="page-content">
-        <div class="validation-part">
-            <h1>JavaScript Quiz</h1>
-            <p class="text-paragraph">
-                Évaluez vos connaissances en JavaScript en <br /> répondant aux questions que nous avons <br />spécialement sélectionnées pour vous. <br />C'est fun et c'est gratuit.
-            </p>
+      <div class="validation-part">
+        <h1>JavaScript Quiz</h1>
+        <p class="text-paragraph">
+          Évaluez vos connaissances en JavaScript en <br />
+          répondant aux questions que nous avons <br />spécialement
+          sélectionnées pour vous. <br />C'est fun et c'est gratuit.
+        </p>
 
-            <div class="form">
-                <form action="#">
-                    <div class="name-part">
-                        <label for="user-name" id="label">Nom</label>
-                        <input type="text" class="input" id="user-name" placeholder="Joseph" />
-                        <div class="error-message1">
-                            N’oubliez pas de renseigner votre nom avant de commencer le Quiz.
-                        </div>
-                    </div>
-                    <div class="mail-part">
-                        <label for="user-email" id="label">Email</label>
-                        <input type="text" class="input" id="user-email" placeholder="joseph@kinshasadigital.com" />
-                        <div class="error-message2">
-                            N’oubliez pas de renseigner votre email avant de commencer le Quiz
-                        </div>
-                        <!-- <span class="error-msg"></span> -->
-                    </div>
-                    <div class="button">
-                        <button type="submit" id="submit-button">Commencer</button>
-                    </div>
-                </form>
+        <div class="form">
+          <form action="#">
+            <div class="name-part">
+              <label for="user-name" id="label">Nom</label>
+              <input
+                type="text"
+                class="input"
+                id="user-name"
+                placeholder="Joseph"
+              />
+              <div class="error-message1">
+                N’oubliez pas de renseigner votre nom avant de commencer le
+                Quiz.
+              </div>
             </div>
+            <div class="mail-part">
+              <label for="user-email" id="label">Email</label>
+              <input
+                type="text"
+                class="input"
+                id="user-email"
+                placeholder="joseph@kinshasadigital.com"
+              />
+              <div class="error-message2">
+                N’oubliez pas de renseigner votre email avant de commencer le
+                Quiz
+              </div>
+              <!-- <span class="error-msg"></span> -->
+            </div>
+            <div class="button">
+              <button type="submit" id="submit-button">Commencer</button>
+            </div>
+          </form>
         </div>
-        <div class="quiz-part">
-            <div class="question-space">
-                <p class="text-paragraph" id="question"></p>
-            </div>
-            <div class="progress-bar">
-                <div>
-                    <span class="number-question" id="num-qst"></span>
-                    <span class="second-count" id="time-counter"></span>
-                </div>
-                <div class="progressbar-counter">
-                    <div class="innerbar"></div>
-                </div>
-            </div>
-            <div class="answers">
-                <input type="radio" class="check-input input-fixation" id="first-radio" name="gap" />
-                <label class="label-fixation" for="first-radio" id="label_1"></label>
-            </div>
-            <div class="answers">
-                <input type="radio" class="check-input input-fixation" id="second-radio" name="gap" />
-                <label class="label-fixation" for="second-radio" id="label_2"></label>
-            </div>
-            <div class="answers">
-                <input type="radio" class="check-input input-fixation" id="third-radio" name="gap" />
-                <label class="label-fixation" for="third-radio" id="label_3"></label>
-            </div>
-            <div class="answers">
-                <input type="radio" class="check-input input-fixation" id="fourth-radio" name="gap" />
-                <label class="label-fixation" for="fourth-radio" id="label_4"></label>
-            </div>
-            <div class="buttons">
-                <button type="submit" id="quitButton">Quitter</button>
-                <input type="button" class="next-button" id="nextButton" value="Suivant" disabled />
-            </div>
+      </div>
+      <div class="quiz-part">
+        <div class="question-space">
+          <p class="text-paragraph" id="question"></p>
         </div>
-        <div class="result-part">
-            <div id="name-result"></div>
-            <div id="email-result"></div>
-            <div class="last-result-icon">
-                <i></i>
-            </div>
-            <div id="last-result-score"></div>
-            <div id="home-button">
-                <button type="submit" id="home-page">Accueil</button>
-            </div>
+        <div class="progress-bar">
+          <div>
+            <span class="number-question" id="num-qst"></span>
+            <span class="second-count" id="time-counter"></span>
+          </div>
+          <div class="progressbar-counter">
+            <div class="innerbar"></div>
+          </div>
         </div>
+        <div class="answers">
+          <input
+            type="radio"
+            class="check-input input-fixation"
+            id="first-radio"
+            name="gap"
+          />
+          <label class="label-fixation" for="first-radio" id="label_1"></label>
+        </div>
+        <div class="answers">
+          <input
+            type="radio"
+            class="check-input input-fixation"
+            id="second-radio"
+            name="gap"
+          />
+          <label class="label-fixation" for="second-radio" id="label_2"></label>
+        </div>
+        <div class="answers">
+          <input
+            type="radio"
+            class="check-input input-fixation"
+            id="third-radio"
+            name="gap"
+          />
+          <label class="label-fixation" for="third-radio" id="label_3"></label>
+        </div>
+        <div class="answers">
+          <input
+            type="radio"
+            class="check-input input-fixation"
+            id="fourth-radio"
+            name="gap"
+          />
+          <label class="label-fixation" for="fourth-radio" id="label_4"></label>
+        </div>
+        <div class="buttons">
+          <button type="submit" id="quitButton">Quitter</button>
+          <input
+            type="button"
+            class="next-button"
+            id="nextButton"
+            value="Suivant"
+            disabled
+          />
+        </div>
+      </div>
+      <div class="result-part">
+        <div id="name-result"></div>
+        <div id="email-result"></div>
+        <div class="last-result-icon">
+          <i></i>
+        </div>
+        <div id="last-result-score"></div>
+        <div id="home-button">
+          <button type="submit" id="home-page">Accueil</button>
+        </div>
+      </div>
     </div>
 
     <script type="module" src="script.js"></script>
     <!--
 This script places a badge on your repl's full-browser view back to your repl's cover page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green, teal, blue, blurple, magenta, pink!
 -->
-    <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
-</body>
-
+    <script
+      src="https://replit.com/public/js/replit-badge.js"
+      theme="blue"
+      defer
+    ></script>
+  </body>
 </html>
