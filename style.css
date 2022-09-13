@@ -1,152 +1,619 @@
 body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient( 90deg, #85f6b8 0%, rgba(142, 217, 235, 0.85) 99.84%);
-    background-blend-mode: darken;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    90deg,
+    #85f6b8 0%,
+    rgba(142, 217, 235, 0.85) 99.84%
+  );
+  background-blend-mode: darken;
 }
 
 @keyframes disparition {
-    from {
-        margin-left: 100%;
-    }
-    to {
-        margin-left: 0%;
-    }
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
 }
 
 .page-content {
-    animation: disparition 3s;
-    margin-top: 2%;
-    margin-bottom: 2%;
+  animation: disparition 3s;
+  /* margin-top: 2%;
+  margin-bottom: 2%; */
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 div.validation-part {
-    background: #ffffff;
-    text-align: center;
-    width: 480px;
-    height: 580px;
-    display: block;
-    margin: auto;
+  background: #ffffff;
+  text-align: center;
+  width: 480px;
+  height: 580px;
+  display: block;
+  margin: auto;
 }
 
 div.quiz-part {
-    background: #ffffff;
-    width: 480px;
-    height: 580px;
-    margin: auto;
-    display: none;
+  background: #ffffff;
+  width: 480px;
+  height: 580px;
+  margin: auto;
+  display: none;
 }
 
 div.result-part {
-    background: #ffffff;
-    width: 480px;
-    height: 580px;
-    display: none;
-    margin: auto;
+  background: #ffffff;
+  width: 480px;
+  height: 580px;
+  display: none;
+  margin: auto;
 }
 
 div.validation-part div.name-part,
 div.validation-part div.mail-part {
-    margin-bottom: 30px;
-    height: 80px;
+  margin-bottom: 30px;
+  height: 80px;
 }
 
 div.validation-part h1 {
-    padding-top: 60px;
-    font-family: "Inter";
-    color: #555555;
+  padding-top: 60px;
+  font-family: "Inter";
+  color: #555555;
 }
 
 div.validation-part p.text-paragraph,
 div.quiz-part p.text-paragraph {
-    padding: 10px 45px;
-    font-family: "Inter";
-    line-height: 25px;
-    font-size: 18px;
-    text-align: center;
-    color: #555555;
+  padding: 10px 45px;
+  font-family: "Inter";
+  line-height: 25px;
+  font-size: 18px;
+  text-align: center;
+  color: #555555;
 }
 
 div.quiz-part div.question-space {
-    height: 135px;
+  height: 135px;
 }
 
 div.quiz-part p.text-paragraph {
-    padding-top: 50px;
-    padding-bottom: 60px;
-    font-size: 20px;
-    font-weight: 400px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  font-size: 20px;
+  font-weight: 400px;
 }
 
 label#label {
-    display: block;
-    text-align: left;
-    margin-left: 42px;
-    font-family: "Inter";
-    font-size: 17px;
-    padding-bottom: 10px;
-    color: #555555;
+  display: block;
+  text-align: left;
+  margin-left: 42px;
+  font-family: "Inter";
+  font-size: 17px;
+  padding-bottom: 10px;
+  color: #555555;
 }
 
 input.input {
-    height: 45px;
-    width: 374px;
-    border: 1px solid #dddddd;
-    font-family: "Inter";
-    font-size: 16px;
-    color: #555555;
-    background: #ffffff;
-    padding-left: 20px;
+  height: 45px;
+  width: 374px;
+  border: 1px solid #dddddd;
+  font-family: "Inter";
+  font-size: 16px;
+  color: #555555;
+  background: #ffffff;
+  padding-left: 20px;
 }
 
 div.error-message1,
 div.error-message2 {
-    text-align: left;
-    margin-left: 42px;
-    color: #ff3838;
-    font-size: 12px;
-    font-family: "Inter", sans-serif;
-    display: none;
+  text-align: left;
+  margin-left: 42px;
+  color: #ff3838;
+  font-size: 12px;
+  font-family: "Inter", sans-serif;
+  display: none;
 }
 
 button#submit-button {
-    height: 50px;
-    width: 200px;
-    /* margin-top: 20px;s */
-    background: #028a3d;
-    border: none;
-    font-family: "Inter";
-    font-size: 18px;
-    color: #ffffff;
-    margin-top: 2px;
-    box-shadow: 0px 3px 5px rgb(164, 185, 192);
+  height: 50px;
+  width: 200px;
+  /* margin-top: 20px;s */
+  background: #028a3d;
+  border: none;
+  font-family: "Inter";
+  font-size: 18px;
+  color: #ffffff;
+  margin-top: 2px;
+  box-shadow: 0px 3px 5px rgb(164, 185, 192);
 }
 
 button#submit-button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 div.quiz-part div.progress-bar {
-    margin-left: 25px;
-    font-family: "Inter";
-    font-size: 14px;
-    margin-bottom: 30px;
-    margin-top: 5px;
-    font-weight: 400px;
+  margin-left: 25px;
+  font-family: "Inter";
+  font-size: 14px;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  font-weight: 400px;
 }
 
 div.progress-bar .second-count {
-    float: right;
-    margin-right: 36px;
-    color: #555555;
+  float: right;
+  margin-right: 36px;
+  color: #555555;
 }
 
 div.progress-bar .number-question {
-    margin-left: 11px;
-    color: #555555;
+  margin-left: 11px;
+  color: #555555;
 }
 
 div.progress-bar div.progressbar-counter div.innerbar {
+  height: 100%;
+  width: 100%;
+  background: #028a3d;
+  border-radius: 10px;
+  margin-top: 15px;
+  position: relative;
+  transition: all 1s;
+}
+
+div.progress-bar div.progressbar-counter {
+  height: 10px;
+  width: 89.4%;
+  margin-left: 11px;
+  background: #dddddd;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+div.answers {
+  display: flex;
+  flex-direction: row;
+  padding-left: 6px;
+}
+
+div.answers input {
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+}
+
+div.answers input#first-radio,
+div.answers input#second-radio,
+div.answers input#third-radio,
+div.answers input#fourth-radio {
+  display: inline;
+  outline: none;
+  position: relative;
+}
+
+div.answers input#first-radio:hover,
+div.answers input#second-radio:hover,
+div.answers input#third-radio:hover,
+div.answers input#fourth-radio:hover {
+  cursor: pointer;
+}
+
+input.error {
+  background: #ffffff;
+  border: 1px solid #ff3838;
+}
+
+div.page-content div.disappear {
+  display: none;
+}
+
+.appear {
+  display: block;
+}
+
+div.answers {
+  height: 30px;
+  width: 399.6px;
+  margin-left: 36px;
+  margin-bottom: 30px;
+  font-family: "Inter";
+  font-size: 14px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  font-weight: 400;
+}
+
+div.valid {
+  border: 1px solid #028a3d;
+  height: 30x;
+}
+
+input[type="button"]:disabled {
+  background: rgba(2, 138, 61, 0.42);
+  border: 1px solid rgba(2, 138, 61, 0.42);
+}
+
+input[type="button"]:enabled {
+  background: #028a3d;
+  border: 1px solid #028a3d;
+}
+
+.answers:hover {
+  cursor: pointer;
+  background-color: rgb(212, 231, 248);
+}
+
+div.answers label {
+  margin-top: 0;
+  width: 100%;
+  padding-top: 7px;
+  font-family: "Inter";
+  color: #555555;
+  padding-left: 5px;
+}
+
+div.answers label {
+  cursor: pointer;
+}
+
+.failure-color {
+  color: #ff3838;
+}
+
+.success-color {
+  color: #028a3d;
+}
+
+div.buttons {
+  display: block;
+  margin-top: 5px;
+  margin-left: 70px;
+}
+
+div.buttons #quitButton,
+div.buttons #nextButton {
+  height: 50px;
+  width: 186.5px;
+  margin: 15px 15px;
+  color: #ffffff;
+  border: none;
+  font-family: "Inter";
+  font-size: 16px;
+  box-shadow: 0px 3px 5px rgb(164, 185, 192);
+  font-weight: bold;
+}
+
+div.buttons #quitButton {
+  background: #ec880c;
+  margin-left: -34px;
+}
+
+div.buttons .nextButtonHover:hover {
+  cursor: pointer;
+}
+
+div.buttons #quitButton:hover {
+  cursor: pointer;
+}
+
+div.result-part div.last-result-icon {
+  text-align: center;
+  font-size: 135px;
+}
+
+#name-result {
+  font-size: 40px;
+  font-family: "Inter";
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 35px;
+  color: #555555;
+  font-weight: 500px;
+}
+
+#email-result {
+  font-size: 20px;
+  font-family: "Inter";
+  text-align: center;
+  padding-bottom: 35px;
+  color: #555555;
+  font-weight: 500px;
+}
+
+#last-result-score {
+  font-size: 20px;
+  font-family: "Inter";
+  text-align: center;
+  padding-top: 15px;
+  color: #555555;
+  font-weight: 700;
+}
+
+div#home-button {
+  text-align: center;
+}
+
+div#home-button button#home-page {
+  height: 59px;
+  width: 216px;
+  background: #0880d6;
+  color: #ffffff;
+  border: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 40px;
+  box-shadow: 0px 3px 5px rgb(164, 185, 192);
+}
+
+button#home-page:hover {
+  cursor: pointer;
+}
+
+div.result-part {
+  display: none;
+}
+
+input[type="radio"]:checked {
+  background: #028a3d;
+  border: 1px solid #028a3d;
+  outline: none;
+  box-shadow: none;
+}
+
+input[type="radio"]:before {
+  content: "";
+  display: block;
+  width: 13px;
+  height: 14px;
+  margin-top: 5px;
+  margin-left: -1px;
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked:before {
+  background: #028a3d;
+  border: 1px solid #028a3d;
+  box-shadow: none;
+  box-decoration-break: none;
+}
+
+/* les écrans ciblés // 768 425 375 320 300 */
+
+@media screen and (max-width: 909px) {
+  div.validation-part {
+    width: 480px;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+  div.quiz-part {
+    width: 480px;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+  div.result-part {
+    width: 480px;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.validation-part {
+    width: 480px;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+  div.quiz-part {
+    width: 480px;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+  div.result-part {
+    width: 480px;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  div.validation-part {
+    width: 95%;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+  div.quiz-part {
+    width: 95%;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+  div.result-part {
+    width: 95%;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+  div.validation-part h1 {
+    padding-top: 80px;
+    font-size: 26px;
+  }
+  div.validation-part p.text-paragraph,
+  div.quiz-part p.text-paragraph {
+    font-size: 15px;
+  }
+  div.validation-part div.name-part,
+  div.validation-part div.mail-part {
+    margin-bottom: 10px;
+    height: 80px;
+  }
+  label#label {
+    display: block;
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
+  input.input {
+    height: 25px;
+    width: 320px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    font-family: "Inter";
+    font-size: 13px;
+  }
+  div.error-message1,
+  div.error-message2 {
+    font-size: 10px;
+  }
+  input.error {
+    background: #ffffff;
+    border: 1px solid #ff3838;
+  }
+  button#submit-button {
+    height: 30px;
+    width: 180px;
+    background: #028a3d;
+    border: none;
+    color: #ffffff;
+    font-family: "Inter";
+    font-size: 15px;
+    margin-top: 30px;
+  }
+  div.progress-bar div.progressbar-counter {
+    height: 10px;
+    width: 85.5%;
+    margin-left: 16px;
+    background: #dddddd;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+  div.answers label {
+    margin-top: 1px;
+    width: 100%;
+    padding-top: 7px;
+    font-size: 11.5px;
+    /* background-color: #ff0006; */
+  }
+  div.answers {
+    height: 30px;
+    width: 318px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    margin-left: 42px;
+    margin-bottom: 30px;
+  }
+  div.buttons {
+    display: block;
+    margin-top: 40px;
+    margin-left: 60px;
+  }
+  div.valid {
+    border: 1px solid #028a3d;
+  }
+  div.buttons #quitButton,
+  div.buttons #nextButton {
+    height: 40px;
+    width: 120px;
+    margin: 15px 10px;
+    color: #ffffff;
+    border: none;
+    font-family: "Inter";
+    font-size: 16px;
+  }
+  div.result-part div.last-result-icon {
+    text-align: center;
+    font-size: 180px;
+  }
+  #name-result {
+    font-size: 20px;
+    font-family: "Inter";
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 35px;
+  }
+  #email-result {
+    font-size: 18px;
+    font-family: "Inter";
+    text-align: center;
+    padding-bottom: 35px;
+  }
+  #last-result-score {
+    font-size: 17px;
+    font-family: "Inter";
+    text-align: center;
+    padding-top: 15px;
+  }
+  div#home-button {
+    text-align: center;
+  }
+  div#home-button button#home-page {
+    height: 40px;
+    width: 120px;
+    background: #0880d6;
+    color: #ffffff;
+    border: none;
+    font-family: "Inter";
+    font-size: 15px;
+    margin-top: 40px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  div.validation-part {
+    width: 95%;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+  div.validation-part h1 {
+    padding-top: 80px;
+    font-size: 22px;
+    width: 100%;
+    text-align: center;
+  }
+  div.validation-part p.text-paragraph,
+  div.quiz-part p.text-paragraph {
+    font-size: 12px;
+  }
+  div.validation-part div.name-part,
+  div.validation-part div.mail-part {
+    margin-bottom: 10px;
+    height: 80px;
+  }
+  label#label {
+    display: block;
+    text-align: left;
+    margin-left: 33px;
+    font-family: "Inter";
+    font-size: 14px;
+    padding-bottom: 10px;
+  }
+  input.input {
+    height: 32px;
+    width: 252px;
+    border: 1px solid #dddddd;
+    font-family: "Inter";
+    font-size: 13px;
+  }
+  div.error-message1,
+  div.error-message2 {
+    font-size: 8.5px;
+    margin-left: 33px;
+  }
+  input.error {
+    background: #ffffff;
+    border: 1px solid #ff3838;
+  }
+  div.answers label {
+    margin-top: 4px;
+    width: 100%;
+    padding-top: 7px;
+    font-size: 10px;
+    /* background-color: #ff0006; */
+  }
+  div.progress-bar div.progressbar-counter div.innerbar {
     height: 100%;
     width: 100%;
     background: #028a3d;
@@ -154,722 +621,264 @@ div.progress-bar div.progressbar-counter div.innerbar {
     margin-top: 15px;
     position: relative;
     transition: all 1s;
-}
-
-div.progress-bar div.progressbar-counter {
+  }
+  div.progress-bar div.progressbar-counter {
     height: 10px;
-    width: 89.4%;
-    margin-left: 11px;
+    width: 91%;
+    margin-left: 1px;
     background: #dddddd;
     border-radius: 10px;
     margin-top: 15px;
-}
-
-div.answers {
-    display: flex;
-    flex-direction: row;
-    padding-left: 6px;
-}
-
-div.answers input {
-    border: 1px solid #dddddd;
-    border-radius: 20px;
-}
-
-div.answers input#first-radio,
-div.answers input#second-radio,
-div.answers input#third-radio,
-div.answers input#fourth-radio {
-    display: inline;
-    outline: none;
-    position: relative;
-}
-
-div.answers input#first-radio:hover,
-div.answers input#second-radio:hover,
-div.answers input#third-radio:hover,
-div.answers input#fourth-radio:hover {
-    cursor: pointer;
-}
-
-input.error {
-    background: #ffffff;
-    border: 1px solid #ff3838;
-}
-
-div.page-content div.disappear {
-    display: none;
-}
-
-.appear {
-    display: block;
-}
-
-div.answers {
+  }
+  div.answers {
     height: 30px;
-    width: 399.6px;
-    margin-left: 36px;
+    width: 280px;
+    border: 1px #dddddd solid;
+    margin-left: 26px;
     margin-bottom: 30px;
+  }
+  div.quiz-part div.progress-bar {
+    margin-left: 25px;
     font-family: "Inter";
     font-size: 14px;
-    background: #ffffff;
-    border: 1px solid #dddddd;
-    font-weight: 400;
-}
-
-div.valid {
+    margin-bottom: 30px;
+  }
+  div.progress-bar .second-count {
+    float: right;
+    margin-right: 27px;
+  }
+  div.progress-bar .number-question {
+    margin-left: 0;
+  }
+  div.valid {
     border: 1px solid #028a3d;
     height: 30x;
-}
-
-input[type="button"]:disabled {
-    background: rgba(2, 138, 61, 0.42);
-    border: 1px solid rgba(2, 138, 61, 0.42);
-}
-
-input[type="button"]:enabled {
-    background: #028a3d;
-    border: 1px solid #028a3d;
-}
-
-.answers:hover {
-    cursor: pointer;
-    background-color: rgb(212, 231, 248);
-}
-
-div.answers label {
-    margin-top: 0;
-    width: 100%;
-    padding-top: 7px;
-    font-family: "Inter";
-    color: #555555;
-    padding-left: 5px;
-}
-
-div.answers label {
-    cursor: pointer;
-}
-
-.failure-color {
-    color: #ff3838;
-}
-
-.success-color {
-    color: #028a3d;
-}
-
-div.buttons {
+  }
+  div.buttons {
     display: block;
-    margin-top: 5px;
-    margin-left: 70px;
-}
-
-div.buttons #quitButton,
-div.buttons #nextButton {
-    height: 50px;
-    width: 186.5px;
-    margin: 15px 15px;
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+  div.buttons #quitButton,
+  div.buttons #nextButton {
+    height: 30px;
+    width: 120px;
+    margin: 15px 6px;
     color: #ffffff;
     border: none;
     font-family: "Inter";
     font-size: 16px;
-    box-shadow: 0px 3px 5px rgb(164, 185, 192);
-    font-weight: bold;
-}
-
-div.buttons #quitButton {
-    background: #ec880c;
-    margin-left: -34px;
-}
-
-div.buttons .nextButtonHover:hover {
-    cursor: pointer;
-}
-
-div.buttons #quitButton:hover {
-    cursor: pointer;
-}
-
-div.result-part div.last-result-icon {
+  }
+  div.result-part div.last-result-icon {
     text-align: center;
-    font-size: 135px;
-}
-
-#name-result {
-    font-size: 40px;
+    font-size: 150px;
+    margin: 15px auto;
+  }
+  input[type="radio"]:before {
+    content: "";
+    display: block;
+    width: 19px;
+    height: 20px;
+    margin-top: 2px;
+    margin-left: -2px;
+    border-radius: 50%;
+  }
+  #name-result {
+    font-size: 20px;
     font-family: "Inter";
     text-align: center;
     padding-top: 80px;
     padding-bottom: 35px;
-    color: #555555;
-    font-weight: 500px;
-}
-
-#email-result {
-    font-size: 20px;
+  }
+  #email-result {
+    font-size: 16px;
     font-family: "Inter";
     text-align: center;
     padding-bottom: 35px;
-    color: #555555;
-    font-weight: 500px;
-}
-
-#last-result-score {
-    font-size: 20px;
-    font-family: "Inter";
-    text-align: center;
-    padding-top: 15px;
-    color: #555555;
-    font-weight: 700;
-}
-
-div#home-button {
-    text-align: center;
-}
-
-div#home-button button#home-page {
-    height: 59px;
-    width: 216px;
-    background: #0880d6;
-    color: #ffffff;
-    border: none;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    margin-top: 40px;
-    box-shadow: 0px 3px 5px rgb(164, 185, 192);
-}
-
-button#home-page:hover {
-    cursor: pointer;
-}
-
-div.result-part {
-    display: none;
-}
-
-input[type="radio"]:checked {
-    background: #028a3d;
-    border: 1px solid #028a3d;
-    outline: none;
-    box-shadow: none;
-}
-
-input[type="radio"]:before {
-    content: "";
-    display: block;
-    width: 13px;
-    height: 14px;
-    margin-top: 5px;
-    margin-left: -1px;
-    border-radius: 50%;
-}
-
-input[type="radio"]:checked:before {
-    background: #028a3d;
-    border: 1px solid #028a3d;
-    box-shadow: none;
-    box-decoration-break: none;
-}
-
-
-/* les écrans ciblés // 768 425 375 320 300 */
-
-@media screen and (max-width: 909px) {
-    div.validation-part {
-        width: 480px;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-    div.quiz-part {
-        width: 480px;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-    div.result-part {
-        width: 480px;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    div.validation-part {
-        width: 480px;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-    div.quiz-part {
-        width: 480px;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-    div.result-part {
-        width: 480px;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    div.validation-part {
-        width: 95%;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-    div.quiz-part {
-        width: 95%;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-    div.result-part {
-        width: 95%;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-    div.validation-part h1 {
-        padding-top: 80px;
-        font-size: 26px;
-    }
-    div.validation-part p.text-paragraph,
-    div.quiz-part p.text-paragraph {
-        font-size: 15px;
-    }
-    div.validation-part div.name-part,
-    div.validation-part div.mail-part {
-        margin-bottom: 10px;
-        height: 80px;
-    }
-    label#label {
-        display: block;
-        font-size: 15px;
-        padding-bottom: 10px;
-    }
-    input.input {
-        height: 25px;
-        width: 320px;
-        background: #ffffff;
-        border: 1px solid #dddddd;
-        font-family: "Inter";
-        font-size: 13px;
-    }
-    div.error-message1,
-    div.error-message2 {
-        font-size: 10px;
-    }
-    input.error {
-        background: #ffffff;
-        border: 1px solid #ff3838;
-    }
-    button#submit-button {
-        height: 30px;
-        width: 180px;
-        background: #028a3d;
-        border: none;
-        color: #ffffff;
-        font-family: "Inter";
-        font-size: 15px;
-        margin-top: 30px;
-    }
-    div.progress-bar div.progressbar-counter {
-        height: 10px;
-        width: 85.5%;
-        margin-left: 16px;
-        background: #dddddd;
-        border-radius: 10px;
-        margin-top: 15px;
-    }
-    div.answers label {
-        margin-top: 1px;
-        width: 100%;
-        padding-top: 7px;
-        font-size: 11.5px;
-        /* background-color: #ff0006; */
-    }
-    div.answers {
-        height: 30px;
-        width: 318px;
-        background: #ffffff;
-        border: 1px solid #dddddd;
-        margin-left: 42px;
-        margin-bottom: 30px;
-    }
-    div.buttons {
-        display: block;
-        margin-top: 40px;
-        margin-left: 60px;
-    }
-    div.valid {
-        border: 1px solid #028a3d;
-    }
-    div.buttons #quitButton,
-    div.buttons #nextButton {
-        height: 40px;
-        width: 120px;
-        margin: 15px 10px;
-        color: #ffffff;
-        border: none;
-        font-family: "Inter";
-        font-size: 16px;
-    }
-    div.result-part div.last-result-icon {
-        text-align: center;
-        font-size: 180px;
-    }
-    #name-result {
-        font-size: 20px;
-        font-family: "Inter";
-        text-align: center;
-        padding-top: 80px;
-        padding-bottom: 35px;
-    }
-    #email-result {
-        font-size: 18px;
-        font-family: "Inter";
-        text-align: center;
-        padding-bottom: 35px;
-    }
-    #last-result-score {
-        font-size: 17px;
-        font-family: "Inter";
-        text-align: center;
-        padding-top: 15px;
-    }
-    div#home-button {
-        text-align: center;
-    }
-    div#home-button button#home-page {
-        height: 40px;
-        width: 120px;
-        background: #0880d6;
-        color: #ffffff;
-        border: none;
-        font-family: "Inter";
-        font-size: 15px;
-        margin-top: 40px;
-        font-weight: bold;
-    }
-}
-
-@media screen and (max-width: 375px) {
-    div.validation-part {
-        width: 95%;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-    div.validation-part h1 {
-        padding-top: 80px;
-        font-size: 22px;
-        width: 100%;
-        text-align: center;
-    }
-    div.validation-part p.text-paragraph,
-    div.quiz-part p.text-paragraph {
-        font-size: 12px;
-    }
-    div.validation-part div.name-part,
-    div.validation-part div.mail-part {
-        margin-bottom: 10px;
-        height: 80px;
-    }
-    label#label {
-        display: block;
-        text-align: left;
-        margin-left: 33px;
-        font-family: "Inter";
-        font-size: 14px;
-        padding-bottom: 10px;
-    }
-    input.input {
-        height: 32px;
-        width: 252px;
-        border: 1px solid #dddddd;
-        font-family: "Inter";
-        font-size: 13px;
-    }
-    div.error-message1,
-    div.error-message2 {
-        font-size: 8.5px;
-        margin-left: 33px;
-    }
-    input.error {
-        background: #ffffff;
-        border: 1px solid #ff3838;
-    }
-    div.answers label {
-        margin-top: 4px;
-        width: 100%;
-        padding-top: 7px;
-        font-size: 10px;
-        /* background-color: #ff0006; */
-    }
-    div.progress-bar div.progressbar-counter div.innerbar {
-        height: 100%;
-        width: 100%;
-        background: #028a3d;
-        border-radius: 10px;
-        margin-top: 15px;
-        position: relative;
-        transition: all 1s;
-    }
-    div.progress-bar div.progressbar-counter {
-        height: 10px;
-        width: 91%;
-        margin-left: 1px;
-        background: #dddddd;
-        border-radius: 10px;
-        margin-top: 15px;
-    }
-    div.answers {
-        height: 30px;
-        width: 280px;
-        border: 1px #dddddd solid;
-        margin-left: 26px;
-        margin-bottom: 30px;
-    }
-    div.quiz-part div.progress-bar {
-        margin-left: 25px;
-        font-family: "Inter";
-        font-size: 14px;
-        margin-bottom: 30px;
-    }
-    div.progress-bar .second-count {
-        float: right;
-        margin-right: 27px;
-    }
-    div.progress-bar .number-question {
-        margin-left: 0;
-    }
-    div.valid {
-        border: 1px solid #028a3d;
-        height: 30x;
-    }
-    div.buttons {
-        display: block;
-        margin-top: 40px;
-        margin-left: 40px;
-    }
-    div.buttons #quitButton,
-    div.buttons #nextButton {
-        height: 30px;
-        width: 120px;
-        margin: 15px 6px;
-        color: #ffffff;
-        border: none;
-        font-family: "Inter";
-        font-size: 16px;
-    }
-    div.result-part div.last-result-icon {
-        text-align: center;
-        font-size: 150px;
-        margin: 15px auto;
-    }
-    input[type="radio"]:before {
-        content: "";
-        display: block;
-        width: 19px;
-        height: 20px;
-        margin-top: 2px;
-        margin-left: -2px;
-        border-radius: 50%;
-    }
-    #name-result {
-        font-size: 20px;
-        font-family: "Inter";
-        text-align: center;
-        padding-top: 80px;
-        padding-bottom: 35px;
-    }
-    #email-result {
-        font-size: 16px;
-        font-family: "Inter";
-        text-align: center;
-        padding-bottom: 35px;
-    }
+  }
 }
 
 @media screen and (max-width: 320px) {
-    div.quiz-part {
-        margin: auto;
-    }
-    div.validation-part h1 {
-        padding-top: 80px;
-        font-size: 22px;
-    }
-    div.validation-part p.text-paragraph,
-    div.quiz-part p.text-paragraph {
-        font-size: 12px;
-        padding: 30px 30px;
-    }
-    div.validation-part div.name-part,
-    div.validation-part div.mail-part {
-        margin-bottom: 10px;
-        height: 80px;
-    }
-    input.input {
-        height: 25px;
-        width: 250px;
-        background: #ffffff;
-        border: 1px solid #dddddd;
-        font-family: "Inter";
-        font-size: 13px;
-    }
-    label#label {
-        display: block;
-        font-size: 15px;
-        padding-bottom: 10px;
-        margin-left: 25px;
-    }
-    div.error-message1,
-    div.error-message2 {
-        margin-left: 23px;
-        color: #ff3838;
-        font-size: 8.5px;
-    }
-    div.buttons {
-        display: block;
-        margin-top: 25px;
-        margin-left: 40px;
-    }
-    div.answers {
-        margin-left: 13px;
-    }
-    div.answers label {
-        margin-top: 4px;
-        width: 360px;
-        padding-top: 7px;
-        font-size: 10.5px;
-    }
-    div.quiz-part div.progress-bar {
-        margin-left: -2px;
-        font-family: "Inter";
-        font-size: 14px;
-        margin-bottom: 30px;
-    }
-    div.progress-bar .second-count {
-        float: right;
-        margin-right: 16px;
-    }
-    div.progress-bar .number-question {
-        margin-left: 15px;
-    }
-    div.progress-bar div.progressbar-counter div.innerbar {
-        height: 100%;
-        width: 100%;
-        background: #028a3d;
-        border-radius: 10px;
-        margin-top: 15px;
-        position: relative;
-        transition: all 1s;
-    }
-    div.progress-bar div.progressbar-counter {
-        height: 10px;
-        width: 90%;
-        margin-left: 16px;
-        background: #dddddd;
-        border-radius: 10px;
-        margin-top: 15px;
-    }
-    div.quiz-part {
-        width: 95%;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-    input.error {
-        background: #ffffff;
-        border: 1px solid #ff3838;
-    }
-    div.buttons {
-        display: block;
-        margin-top: 40px;
-        margin-left: 20px;
-    }
-    div.buttons #quitButton,
-    div.buttons #nextButton {
-        height: 30px;
-        width: 100px;
-        margin: 15px 10px;
-        color: #ffffff;
-        border: none;
-        font-family: "Inter";
-        font-size: 16px;
-    }
+  div.quiz-part {
+    margin: auto;
+  }
+  div.validation-part h1 {
+    padding-top: 80px;
+    font-size: 22px;
+  }
+  div.validation-part p.text-paragraph,
+  div.quiz-part p.text-paragraph {
+    font-size: 12px;
+    padding: 30px 30px;
+  }
+  div.validation-part div.name-part,
+  div.validation-part div.mail-part {
+    margin-bottom: 10px;
+    height: 80px;
+  }
+  input.input {
+    height: 25px;
+    width: 250px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    font-family: "Inter";
+    font-size: 13px;
+  }
+  label#label {
+    display: block;
+    font-size: 15px;
+    padding-bottom: 10px;
+    margin-left: 25px;
+  }
+  div.error-message1,
+  div.error-message2 {
+    margin-left: 23px;
+    color: #ff3838;
+    font-size: 8.5px;
+  }
+  div.buttons {
+    display: block;
+    margin-top: 25px;
+    margin-left: 40px;
+  }
+  div.answers {
+    margin-left: 13px;
+  }
+  div.answers label {
+    margin-top: 4px;
+    width: 360px;
+    padding-top: 7px;
+    font-size: 10.5px;
+  }
+  div.quiz-part div.progress-bar {
+    margin-left: -2px;
+    font-family: "Inter";
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  div.progress-bar .second-count {
+    float: right;
+    margin-right: 16px;
+  }
+  div.progress-bar .number-question {
+    margin-left: 15px;
+  }
+  div.progress-bar div.progressbar-counter div.innerbar {
+    height: 100%;
+    width: 100%;
+    background: #028a3d;
+    border-radius: 10px;
+    margin-top: 15px;
+    position: relative;
+    transition: all 1s;
+  }
+  div.progress-bar div.progressbar-counter {
+    height: 10px;
+    width: 90%;
+    margin-left: 16px;
+    background: #dddddd;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+  div.quiz-part {
+    width: 95%;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+  input.error {
+    background: #ffffff;
+    border: 1px solid #ff3838;
+  }
+  div.buttons {
+    display: block;
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+  div.buttons #quitButton,
+  div.buttons #nextButton {
+    height: 30px;
+    width: 100px;
+    margin: 15px 10px;
+    color: #ffffff;
+    border: none;
+    font-family: "Inter";
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 275px) {
-    div.validation-part {
-        width: 95%;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-    div.quiz-part {
-        width: 95%;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-    div.result-part {
-        width: 95%;
-        height: 590px;
-        margin-bottom: 20px;
-    }
-    div.validation-part h1 {
-        padding-top: 80px;
-        font-size: 20px;
-    }
-    div.validation-part p.text-paragraph,
-    div.quiz-part p.text-paragraph {
-        font-size: 10px;
-    }
-    label#label {
-        display: block;
-        text-align: left;
-        margin-left: 23px;
-        font-family: "Inter";
-        font-size: 16px;
-        padding-bottom: 10px;
-    }
-    input.input {
-        height: 25px;
-        width: 230px;
-        border: 1px solid #dddddd;
-        font-family: "Inter";
-        font-size: 16px;
-    }
-    div.error-message1,
-    div.error-message2 {
-        text-align: left;
-        margin-left: 23px;
-        color: #ff3838;
-        font-size: 8.5px;
-        font-family: "Inter";
-        display: none;
-        width: 85.5%;
-    }
-    div.answers {
-        height: 30px;
-        width: 255px;
-        border: 1px solid #dddddd;
-    }
-    div.answers label {
-        margin-top: 4px;
-        width: 360px;
-        padding-top: 7px;
-        font-size: 10.5px;
-    }
-    div.quiz-part p.text-paragraph {
-        padding-top: 40px;
-    }
-    input[type="radio"]:before {
-        content: "";
-        display: block;
-        width: 100%px;
-        height: 20px;
-        margin-top: 2px;
-        margin-left: -4px;
-        border-radius: 50%;
-    }
-    div.valid {
-        border: 1px solid #028a3d;
-    }
+  div.validation-part {
+    width: 95%;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+  div.quiz-part {
+    width: 95%;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+  div.result-part {
+    width: 95%;
+    height: 590px;
+    margin-bottom: 20px;
+  }
+  div.validation-part h1 {
+    padding-top: 80px;
+    font-size: 20px;
+  }
+  div.validation-part p.text-paragraph,
+  div.quiz-part p.text-paragraph {
+    font-size: 10px;
+  }
+  label#label {
+    display: block;
+    text-align: left;
+    margin-left: 23px;
+    font-family: "Inter";
+    font-size: 16px;
+    padding-bottom: 10px;
+  }
+  input.input {
+    height: 25px;
+    width: 230px;
+    border: 1px solid #dddddd;
+    font-family: "Inter";
+    font-size: 16px;
+  }
+  div.error-message1,
+  div.error-message2 {
+    text-align: left;
+    margin-left: 23px;
+    color: #ff3838;
+    font-size: 8.5px;
+    font-family: "Inter";
+    display: none;
+    width: 85.5%;
+  }
+  div.answers {
+    height: 30px;
+    width: 255px;
+    border: 1px solid #dddddd;
+  }
+  div.answers label {
+    margin-top: 4px;
+    width: 360px;
+    padding-top: 7px;
+    font-size: 10.5px;
+  }
+  div.quiz-part p.text-paragraph {
+    padding-top: 40px;
+  }
+  input[type="radio"]:before {
+    content: "";
+    display: block;
+    width: 100%px;
+    height: 20px;
+    margin-top: 2px;
+    margin-left: -4px;
+    border-radius: 50%;
+  }
+  div.valid {
+    border: 1px solid #028a3d;
+  }
 }
